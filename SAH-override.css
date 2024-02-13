@@ -1,0 +1,192 @@
+/* 
+================================================
+Begin Scott's CSS odifications
+================================================
+*/
+
+
+:root{
+}
+
+body .root {
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+/* Make the CF element title H3 */
+ .cmp-contentfragment--show .cmp-contentfragment__element-title {
+	font-size: 24px;
+}
+
+/* Hide the CF element title */
+ .cmp-contentfragment--hide .cmp-contentfragment__element-title {
+	display: none;
+}
+
+/* Enable centering of the title component */
+.cmp-title--center .cmp-title {
+	text-align: center;
+}
+
+/* Put some space between the Image List items */
+.cmp-image-listSmall .cmp-image-list__item {
+	margin: 0 1rem 3rem;
+}
+
+/* Make the Image List items smaller */
+.cmp-image-listSmall .cmp-image__image {
+	height: 100px;
+	width: 50%;
+}
+
+/* Give me another choice for text color on the Teaser */
+.cmp-teaser--secondaryText .cmp-teaser__pretitle, 
+.cmp-teaser--secondaryText .cmp-teaser__title-link, 
+.cmp-teaser--secondaryText .cmp-teaser__description{
+    color: var(--secondaryTextColor)
+}
+
+/* Give me some new choices for the Teaser component. 
+Note you'll need to modify the template to take advantage of these. 
+cmp-teaser--featuredImageRight
+cmp-teaser--overlay
+cmp-teaser--darkText
+cmp-teaser--noShade
+cmp-teaser--lightShade
+cmp-teaser--darkShade */
+
+.cmp-teaser--featuredImageRight{
+	.cmp-teaser{
+		display: flex; 
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-bottom: 1em;
+		width: 100%; 
+	}
+	.cmp-teaser__image {
+		display: flex;
+		flex-basis: 100%;
+		flex: 2;
+		flex-direction: column;
+		
+		.cmp-image {
+			height: 100%;
+			width: 100%;
+			.cmp-image__image {
+				height: 100%;
+				margin-bottom: 0;
+				margin-top: 0;
+				-o-object-fit: cover;
+				object-fit: cover;
+				-o-object-position: top;
+				object-position: top;
+				width: 100%;
+			}
+		}
+		.cmp-image__image {
+			height: 100%;
+			margin-bottom: 0;
+			margin-top: 0;
+			-o-object-fit: cover;
+			object-fit: cover;
+			-o-object-position: top;
+			object-position: top;
+			width: 100%;
+		}
+	}
+	.cmp-teaser__content {
+		background-color: #ebebeb;
+		display: flex;
+		flex-basis: 100%;
+		flex: 1;
+		flex-direction: column;
+		padding: 3.5em 2em 2em;
+	}
+	.cmp-teaser__description {
+		-ms-flex-item-align: bottom;
+		align-self: bottom;
+		font-size: var(--fontSizeSmall,14px);
+	}
+	.cmp-teaser__description p {
+		font-size: var(--fontSizeSmall,14px);
+		text-align: left;
+	}
+}
+
+
+.cmp-teaser--overlay {
+	.cmp-teaser {
+		align-items: normal;
+		display: flex; 
+		flex-direction: column-reverse;
+		justify-content: center;
+		overflow: scroll;
+	}
+	.cmp-teaser__pretitle {
+		font-size: 60px;
+		color:#00a8e1;
+	}
+	.cmp-teaser__title{
+		font-size: 60px;
+		color:#EBEBEB;
+	}
+	.cmp-teaser__description{
+		color:#EBEBEB;
+	}
+	/* .cmp-teaser__action-link {
+		background-color: var(--brandPrimary);
+		border-radius: var(--buttonBorderRadius, 0);
+		color: var(--textColorInverse);
+		float: left;
+		font-size: var(--fontSizeSmall, 14px);
+		font-weight: var(--fontWeightBold, 600);
+		padding: 1em 2.5em;
+		text-transform: uppercase; 
+	} */
+	.cmp-teaser__content {
+    transform: translate(0px,-100%); 
+	/* background-color: #ffffff50; */
+    padding-left: 150px;
+    padding-right: 28px;
+    position: relative; 
+    width: 50%;
+    margin-right: 40pc;
+}
+	.cmp-teaser__image {
+		flex:auto;
+		height: 25pc;
+		max-height: 25pc;
+		/* overflow: auto; */
+		width: 100%;
+	}
+}
+
+.cmp-teaser--darkText {
+	.cmp-teaser {
+		.cmp-teaser__pretitle {
+		color:#003749;
+		}
+		.cmp-teaser__title{
+			color:#2c2c2c;
+		}
+		.cmp-teaser__description{
+			color:#2c2c2c;
+		}
+	}
+}
+
+.cmp-teaser--noShade {
+	.cmp-teaser__content {
+		background-color:unset;
+}
+}
+.cmp-teaser--lightShade {
+	.cmp-teaser__content {
+		background-color: #ffffff50;
+}
+}
+.cmp-teaser--darkShade {
+	.cmp-teaser__content {
+		background-color: #00000050;
+}
+}
